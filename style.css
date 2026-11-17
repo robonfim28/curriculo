@@ -1,0 +1,366 @@
+/* ==========================================================
+   CURRÍCULO PROFISSIONAL - RODRIGO
+   Design para recrutamento em tecnologia
+   ----------------------------------------------------------
+   ÍNDICE
+   01. Fonte
+   02. Variáveis de cor
+   03. Reset e página
+   04. Folha do currículo
+   05. Cabeçalho
+   06. Seções (títulos e textos)
+   07. Formação e projetos
+   08. Habilidades
+   09. Listas e competências
+   10. Rodapé
+   11. Responsividade (celular)
+   12. Impressão e PDF
+========================================================== */
+
+
+/* ==========================================================
+   01. FONTE
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* ==========================================================
+   02. VARIÁVEIS DE COR
+   Mude uma cor aqui e ela muda no currículo inteiro
+========================================================== */
+
+:root {
+    --primary:    #17365d;   /* azul escuro (títulos e linhas) */
+    --secondary:  #2563a6;   /* azul médio (destaques e links) */
+    --text:       #263445;   /* cor do texto */
+    --muted:      #64748b;   /* cinza (informações secundárias) */
+    --border:     #dce3eb;   /* cor das linhas divisórias */
+    --background: #f1f5f9;   /* fundo da página */
+    --white:      #ffffff;   /* fundo da folha */
+}
+
+
+/* ==========================================================
+   03. RESET E PÁGINA
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 35px 15px;
+}
+
+
+/* ==========================================================
+   04. FOLHA DO CURRÍCULO
+========================================================== */
+
+.resume {
+    max-width: 850px;
+    margin: auto;
+    background: var(--white);
+    padding: 48px 55px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==========================================================
+   05. CABEÇALHO
+========================================================== */
+
+.header {
+    text-align: center;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 22px;
+    margin-bottom: 25px;
+}
+
+/* Nome */
+.header h1 {
+    color: var(--primary);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+/* Cargo / título profissional */
+.header h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary);
+    margin: 8px 0 15px;
+}
+
+/* Contatos */
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.contact a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+
+/* ==========================================================
+   06. SEÇÕES (TÍTULOS E TEXTOS)
+========================================================== */
+
+section {
+    margin-bottom: 23px;
+}
+
+/* Título de cada seção */
+section h3 {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 7px;
+    margin-bottom: 12px;
+}
+
+/* Parágrafos */
+section p {
+    font-size: 12px;
+    text-align: justify;
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   07. FORMAÇÃO E PROJETOS
+========================================================== */
+
+.item {
+    margin-bottom: 14px;
+}
+
+.item h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3px;
+}
+
+/* Nome da instituição */
+.institution {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+/* Período (ex.: 2026 - Em andamento) */
+.date {
+    color: var(--muted);
+    font-size: 11px !important;
+    margin-bottom: 6px;
+}
+
+/* Tecnologias usadas no projeto */
+.technologies {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px !important;
+}
+
+
+/* ==========================================================
+   08. HABILIDADES
+========================================================== */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Cada habilidade vira uma etiqueta */
+.skills span {
+    font-size: 11px;
+    color: var(--primary);
+    background: #edf4fb;
+    border: 1px solid #d8e7f5;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   09. LISTAS E COMPETÊNCIAS
+========================================================== */
+
+.competencies,
+section ul {
+    padding-left: 19px;
+}
+
+/* Competências em duas colunas */
+.competencies {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 20px;
+}
+
+section li {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+
+/* ==========================================================
+   10. RODAPÉ
+========================================================== */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding-top: 13px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 25px;
+}
+
+
+/* ==========================================================
+   11. RESPONSIVIDADE (CELULAR)
+========================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+    }
+
+    .resume {
+        padding: 28px 20px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .contact {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .competencies {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================
+   12. IMPRESSÃO E PDF (A4)
+========================================================== */
+
+@page {
+    size: A4;
+    margin: 12mm;
+}
+
+@media print {
+
+    body {
+        background: white;
+        padding: 0;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .resume {
+        max-width: none;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    section {
+        break-inside: avoid;
+    }
+
+    a {
+        color: var(--secondary);
+    }
+}
+.header {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    column-gap: 28px;
+    align-content: center;
+    text-align: left;
+}
+
+/* Foto ocupa a coluna da esquerda, ao lado de todo o texto */
+.photo {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    align-self: center;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: 0 0 0 3px var(--primary),
+                0 8px 20px rgba(23, 54, 93, 0.25);
+}
+
+/* Nome, cargo e contatos ficam na coluna da direita */
+.header h1,
+.header h2,
+.header .contact {
+    grid-column: 2;
+}
+
+.header h1 {
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+.header .contact {
+    justify-content: flex-start;
+}
+
+/* Celular: foto em cima, tudo centralizado */
+@media (max-width: 600px) {
+
+    .header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .photo {
+        grid-column: 1;
+        grid-row: auto;
+        justify-self: center;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .header h1,
+    .header h2,
+    .header .contact {
+        grid-column: 1;
+    }
+
+    .header .contact {
+        align-items: center;
+        justify-content: center;
+    }
+}
